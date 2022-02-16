@@ -6,7 +6,7 @@ function Header(){
     return (
 <div className="header">
     <img  src={img} className="header--img"/>
-   <h2 className="header--titke">Meme Generator</h2>
+   <h2 className="header--title">Meme Generator</h2>
    <h4 className="header--project"> React Course - project</h4>
 </div>
 

@@ -5,10 +5,24 @@ margin:  0;
 .header{
     display: flex;
     align-items: center;
-
+    background-color: rgb(216, 90, 210);
+    height: 65px;
+    color: white;
+    padding: 20px;
 }
 .header--img{
-    height: 100px;
+    height: 100%;
     margin-right:16px ;
+    border-radius: 50% 30%;
+}
+.header--title{
+font-size: 1.15;
+margin-right: auto;
+    
+}
+.header--project{
+    font-size: 14px;
+    margin-right: auto;
+
 
 }
