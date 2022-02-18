@@ -11,14 +11,25 @@ export default function Meme() {
      * Log the URL of the image to the console. (Don't worry
      * about displaying the image yet)
      */
-    const [memeimage,setMemeimage] =React.useState(" ")
+
+    const [meme , setmeme]=React.useState({
+        toptext:"",
+        bottomtext:"",
+        randomimage:"http://i.imgflip.com/1bij.jpg" 
+    })
+    
+    const [memeimage,setMemeimage] =React.useState(memesData)
 
 
     
     function getMemeImage() {
-        const memesArray = memesData.data.memes
+        const memesArray = memeimage.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeimage(memesArray[randomNumber].url)
+        const url =memesArray[randomNumber].url
+        setmeme(prevMeme =>({
+            ...prevMeme,
+            randomimage:url
+        }))
     }
     
     return (
@@ -42,7 +53,7 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
-            <img src={memeimage}/>
+            <img src={meme.randomimage} className=" meme--image"/>
         </main>
     )
 }
