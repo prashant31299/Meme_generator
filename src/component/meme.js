@@ -1,7 +1,6 @@
 import React  from "react"
 import memesData from "../memesData.js"
 import '../style.css'
-import { useState } from "react"
 
 export default function Meme() {
     /**
@@ -32,6 +31,13 @@ export default function Meme() {
         }))
     }
     
+    function handlechange(event){
+        const {name,value}=event.target
+        setmeme(preve=>({
+            ...preve,[name]:value
+        }))
+
+    }
     return (
         <main>
             <div className="form">
@@ -40,11 +46,19 @@ export default function Meme() {
                     type="text"
                     placeholder="Top text"
                     className="form--input"
+                    value={meme.toptext}
+                    name="toptext"
+                    onChange={handlechange}
+
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className="form--input"
+                    value={meme.bottomtext}
+                    name="bottomtext"
+                    onChange={handlechange}
+
                 />
                 <button 
                     className="form--button"
@@ -53,7 +67,12 @@ export default function Meme() {
                     Get a new meme image 🖼
                 </button>
             </div>
+
+            <div className="meme">
             <img src={meme.randomimage} className=" meme--image"/>
+            <h2 className="meme--text top">{meme.toptext} </h2>
+            <h2 className="meme--text bottom">{meme.bottomtext} </h2>
+            </div>
         </main>
     )
 }

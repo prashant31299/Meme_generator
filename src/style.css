@@ -60,3 +60,26 @@ main {
 .meme--image{
     max-width: 100%;
 }
+.meme{
+   position: relative;
+}
+.meme--text{
+ 
+    position:absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 15px 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
+.top{
+    top: 0;
+}
+.bottom{
+    bottom: 0;
+}
