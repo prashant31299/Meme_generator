@@ -62,6 +62,9 @@ main {
 }
 .meme{
    position: relative;
+   display: flex;
+   align-items: center;
+   justify-content:center;
 }
 .meme--text{
  
